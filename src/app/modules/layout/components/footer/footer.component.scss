@@ -1,0 +1,86 @@
+section {
+    padding: 60px 0;
+    .section-title {
+        text-align: center;
+        color: #e03940;
+        margin-bottom: 50px;
+        text-transform: uppercase;
+    }
+}
+#footer {
+    background: #e03940 !important;
+     h4 {
+        padding-left: 10px;
+        border-left: 3px solid #eeeeee;
+        padding-bottom: 6px;
+        margin-bottom: 20px;
+        color:#ffffff;
+    }
+
+    a {
+        color: #ffffff;
+        text-decoration: none !important;
+        background-color: transparent;
+        -webkit-text-decoration-skip: objects;
+    }
+
+    ul {
+        .social {
+            li {
+                padding: 3px 0;
+                a {
+                    color:#ffffff;
+                    i {
+                        margin-right: 5px;
+                        font-size:25px;
+                        -webkit-transition: .5s all ease;
+                        -moz-transition: .5s all ease;
+                        transition: .5s all ease;
+                    }
+                }
+                &:hover {
+                    a {
+                        color:#eeeeee;
+                        i {
+                            font-size:30px;
+                            margin-top:-10px;
+                        }
+                    }
+                }
+            }
+        }
+        .quick-links {
+            li {
+                padding: 3px 0;
+                -webkit-transition: .5s all ease;
+                -moz-transition: .5s all ease;
+                transition: .5s all ease;
+                a {
+                    color:#ffffff;
+                    i {
+                        margin-right: 5px;
+                    }
+                }
+                &:hover {
+                    padding: 3px 0;
+                    margin-left:5px;
+                    font-weight:700;
+                    a {
+                        i {
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:767px){
+	#footer h4 {
+        padding-left: 0;
+        border-left: transparent;
+        padding-bottom: 0px;
+        margin-bottom: 10px;
+    }
+}

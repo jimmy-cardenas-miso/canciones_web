@@ -1,0 +1,25 @@
+<div class="container container-collector bg-white mt-5 p-3 p-lg-5 rounded">
+  <h1 i18n>Add new Track</h1>
+  <form [formGroup]="trackForm" (ngSubmit)="!trackForm.invalid && addNewTrack()">
+    <label for="track-name" i18n>Name Track:</label>
+    <input id="track-name" type="text" class="form-control" formControlName="name">
+    <div class="alert alert-danger alert-dismissible fade show"
+      *ngIf="trackForm.get('name').hasError('required') && trackForm.get('name').touched " i18n>
+      Track Name required
+    </div>
+    <div class="alert alert-danger alert-dismissible fade show"
+      *ngIf="trackForm.get('name').hasError('minlength') && trackForm.get('name').touched " i18n>
+      Track Name should be longer
+    </div>
+    <label for="track-duration" i18n>Track Duration:</label>
+    <input id="track-duration" type="text" class="form-control" formControlName="duration">
+    <div class="alert alert-danger alert-dismissible fade show"
+      *ngIf="trackForm.get('duration').hasError('required') && trackForm.get('duration').touched" i18n>
+      Duration is required
+    </div>
+    <div>
+      <button id="btn-add-track-sbt" type="submit" class="btn pull-right btn-success mt-2" [disabled]="!trackForm.valid" i18n>Save</button>
+      <button type="cancel" class="btn pull-right btn-danger mt-2 mr-2" (click)="cancelForm()" i18n>Cancel</button>
+    </div>
+  </form>
+</div>

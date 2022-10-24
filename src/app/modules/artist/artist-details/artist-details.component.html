@@ -1,0 +1,31 @@
+<div class="container container-collector bg-white mt-5 p-3 p-lg-5 rounded" *ngIf="artist">
+  <a class="custom-link d-inline-block" routerLink="/artists">
+    <h5 class="pb-3"><em class="bi-arrow-left pr-3"></em>Artistas</h5>
+  </a>
+  <div class="row align-items-start h-50">
+    <div class="col-3">
+      <img class="img-fluid rounded"src="{{ artist.image}}" alt="">
+    </div>
+    <div class="col-9">
+      <h1>{{artist.name}}</h1>
+      <p>{{artist.description}}</p>
+      <p class="font-weight-bold" *ngIf="artist && artist.performerPrizes">Premios {{artist.performerPrizes.length}}</p>
+    </div>
+  </div>
+  <div class="w-100 head-collapse card-header mt-3" data-toggle="collapse" data-target="#collapse-music-info" daria-expanded="true" aria-controls="collapse-music-info"><h2 class="header-item__h2"> Álbumes</h2></div>
+  <div class="row align-items-start h-50 pl-10 collapse" id="collapse-music-info">
+    <div *ngFor="let album of artist.albums" class="cols col-sm-4" [routerLink]="['/albums', album.id]">
+      <div class="card">
+        <img class="card-img-top cover" src="{{album.cover}}" alt="Card image cap">
+        <h4 class="card-text">{{ album.name }}</h4>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-100 head-collapse card-header mt-3" id="" *ngIf="isBand"><h2 class="header-item__h2" i18n>Integrantes</h2></div>
+  <div class="row align-items-start h-50" id="collapse-musicians-info">
+    <div class="col-12">
+      <app-artist-musician-band [musicians]="artist.musicians" [bandId]="artist.id"></app-artist-musician-band>
+    </div>
+  </div>
+</div>

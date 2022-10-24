@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-lite bg-lite">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">
+      <img [src]="'logo.png' | imageUrl" height="35" class="d-inline-block align-top" alt="logos">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+      <div>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-bar-custom">
+          <li class="nav-item nav-item-custom">
+            <a class="nav-link bold" routerLink="/home" routerLinkActive="active" aria-current="page" i18n>HOME</a>
+          </li>
+          <li class="nav-item nav-item-custom">
+            <a class="nav-link semi-bold" routerLink="/albums" routerLinkActive="active" aria-current="page" i18n>ALBUMES</a>
+          </li>
+          <li class="nav-item nav-item-custom">
+            <a class="nav-link semi-bold" routerLink="/artists" routerLinkActive="active" aria-current="page" i18n>ARTISTAS</a>
+          </li>
+          <li class="nav-item nav-item-custom">
+            <a class="nav-link semi-bold" routerLink="/collectors" routerLinkActive="active" aria-current="page" i18n>COLECCIONISTAS</a>
+          </li>
+          <li class="nav-item nav-item-custom">
+            <a class="nav-link semi-bold" routerLink="/awards" routerLinkActive="active" aria-current="page" i18n>PREMIOS</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <button class="btn btn-primary d-none d-md-flex custom-btn-search" type="submit" i18n><em class="bi-search mr-3"></em>Buscar</button>
+
+  </div>
+</nav>

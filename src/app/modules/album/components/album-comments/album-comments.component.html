@@ -1,0 +1,63 @@
+<div class="w-100 head-collapse card-header" id="comments-list"><h5>Comentarios</h5></div>
+<div>
+    <div class="forum-item active card p-2 w-100" *ngIf="comments && comments.length === 0">
+        <div class="row">
+            <div class="col-12" i18n>
+                No existen comentarios
+            </div>
+        </div>
+    </div>
+    <div class="forum-item active card p-2 w-100" *ngFor="let comment of comments">
+        <div class="row">
+            <div class="col-1">
+                <figure class="thumbnail">
+                    <img class="img-fluid" alt="username" title="username" src="http://www.tangoflooring.ca/wp-content/uploads/2015/07/user-avatar-placeholder.png" />
+                </figure>
+            </div>
+            <div class="col-11">
+                <div class="col-md-11 col-sm-11">
+                    <div class="panel panel-default arrow left">
+                        <div class="panel-body">
+                            <div class="comment-post">
+                                <p>
+                                    {{comment.description}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="forum-item active card p-2 w-100">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <form [formGroup]="feedbackForm">
+                    <div class="inputContainer">
+                        <label i18n>Coleccionista:</label>
+                        <select formControlName="collector" id="collector" class="form-control">
+                            <option *ngFor="let collector of collectors" [value]="collector.id">{{collector.name}}</option>
+                        </select>
+                    </div>
+                    <div class="inputContainer">
+                      <label i18n>Descripción:</label>
+                      <textarea rows="6" formControlName="description" id="description" class="form-control">Descripción</textarea>
+                    </div>
+                    <div class="inputContainer">
+                        <label i18n>¿Cómo calificarías este álbum?</label>
+                        <label class="form-control col-1">{{feedbackForm.value?.rating}}</label>
+                        <input formControlName="rating" id="rating" type="range" name="rating" max="5" class="form-control" />
+                    </div>
+                    <div class="inputContainer">
+                        <button type="button"
+                            id="btnAddNewComment"
+                            class="btn btn-success"
+                            (click)="addNewComment()"
+                            [disabled]="feedbackForm.invalid">
+                            Enviar Comentario</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

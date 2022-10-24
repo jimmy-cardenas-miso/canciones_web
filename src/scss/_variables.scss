@@ -1,0 +1,24 @@
+// OVERRIDE
+$theme-colors: (
+  "primary": #e03940,
+  "danger": #ff4136
+);
+
+$font-family-base: 'Roboto', sans-serif;
+
+
+// CUSTOM
+$bg-color: #f3f3f3;
+$gray-font: #949494;
+$custom-red: #e03940;
+$body-bg: #e03940;
+
+$navbar-lite-color: rgba($gray-font, .5) !default;
+$navbar-lite-hover-color: rgba($custom-red, .75) !default;
+$navbar-lite-active-color: $custom-red !default;
+$navbar-lite-disabled-color: rgba($bg-color, .25) !default;
+$navbar-lite-toggler-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path stroke='#{$navbar-lite-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !default;
+$navbar-lite-toggler-border-color: rgba($bg-color, .1) !default;
+
+$navbar-lite-brand-color: $navbar-lite-active-color !default;
+$navbar-lite-brand-hover-color: $navbar-lite-active-color !default;

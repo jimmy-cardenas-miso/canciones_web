@@ -1,0 +1,44 @@
+<div class="card p-2 w-100 musician" *ngFor="let artist of musicians">
+    <div class="row">
+        <div class="col-1">
+            <figure class="thumbnail">
+                <img class="img-fluid" alt="username" title="username" [src]="artist.image" />
+            </figure>
+        </div>
+        <div class="col-11">
+            <div class="col-md-11 col-sm-11">
+                <div class="panel panel-default arrow left">
+                    <div class="panel-body">
+                        <div class="comment-post">
+                            <p>
+                                {{artist.name}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card p-2 w-100">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <form [formGroup]="artistForm">
+                <div class="inputContainer">
+                    <label i18n>Músico:</label>
+                    <select formControlName="artist" id="artist" class="form-control">
+                        <option *ngFor="let artist of artists" [value]="artist.id">{{artist.name}}</option>
+                    </select>
+                </div>
+                <div class="inputContainer">
+                    <button type="button"
+                        id="btnAddMusician"
+                        class="btn btn-success"
+                        (click)="addMusician()"
+                        [disabled]="artistForm.invalid">
+                        Agregar </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

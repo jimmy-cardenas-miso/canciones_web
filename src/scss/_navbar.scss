@@ -1,0 +1,59 @@
+@import "variables";
+
+// White links against a dark background
+.navbar-lite {
+  .navbar-brand {
+    color: $navbar-lite-brand-color;
+
+    @include hover-focus() {
+      color: $navbar-lite-brand-hover-color;
+    }
+  }
+
+  .navbar-nav {
+    .nav-link {
+      color: $navbar-lite-color;
+
+      @include hover-focus() {
+        color: $navbar-lite-hover-color;
+      }
+
+      &.disabled {
+        color: $navbar-lite-disabled-color;
+      }
+    }
+
+    .show > .nav-link,
+    .active > .nav-link,
+    .nav-link.show,
+    .nav-link.active {
+      color: $navbar-lite-active-color;
+    }
+  }
+
+  .navbar-toggler {
+    color: $navbar-lite-color;
+    border-color: $navbar-lite-toggler-border-color;
+  }
+
+  .navbar-toggler-icon {
+    background-image: escape-svg($navbar-lite-toggler-icon-bg);
+  }
+
+  .navbar-text {
+    color: $navbar-lite-color;
+
+    a {
+      color: $navbar-lite-active-color;
+
+      @include hover-focus() {
+        color: $navbar-lite-active-color;
+      }
+    }
+  }
+}
+
+
+.bg-lite {
+  background-color: $bg-color;
+}

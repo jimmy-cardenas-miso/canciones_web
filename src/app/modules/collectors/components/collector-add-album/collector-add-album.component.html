@@ -1,0 +1,19 @@
+<div class="container container-collector bg-white mt-5 p-3 p-lg-5 rounded min-vh-60">
+  <a class="custom-link d-inline-block" [routerLink]="['/collectors', id]">
+    <h5 class="pb-3 gray-color" i18n><em class="bi-arrow-left pr-3"></em>Volver</h5>
+  </a>
+
+  <h1 class="pb-3" i18n>Agregar artistas a favoritos</h1>
+
+  <div class="row">
+    <div *ngFor="let album of albums; let i = index" class="col col-sm-12 col-md-6 col-lg-3">
+      <div class="border rounded">
+        <app-album-item [album]="album"></app-album-item>
+        <div class="card-footer bg-white border-0">
+          <button (click)="addAlbumToFavorites(album)" id="collector-add-album-button-{{i}}" class="btn btn-lg btn-primary w-100 custom-btn-search" i18n><em class="bi-plus-circle-fill mr-3"></em>Agregar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,212 @@
+.item-img {
+    width: 610px;
+    height: 475px;
+}
+
+.display-none {
+    display: none;
+}
+
+.not-border {
+    background-color: transparent
+}
+
+#demo {
+    background-color: #000;
+}
+
+.carousel-item {
+    text-align: center;
+}
+
+.event-list {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+.event-list > li a {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 5px rgb(51, 51, 51);
+    box-shadow: 0px 0px 5px rgba(51, 51, 51, 0.7);
+    padding: 0px;
+    margin: 0px 0px 20px;
+}
+
+.event-list > li a > img {
+    width: 100%;
+}
+.event-list > li a > .info {
+    padding-top: 5px;
+    text-align: center;
+    
+}
+.event-list > li a > .info > .title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0px;
+}
+.event-list > li a > .info > .desc {
+    font-weight: 300;
+    font-size: .75rem;
+    margin: 0px;
+}
+.event-list > li a > .info > ul,
+.event-list > li a > .social > ul {
+    display: table;
+    list-style: none;
+    margin: 10px 0px 0px;
+    padding: 0px;
+    width: 100%;
+    text-align: center;
+}
+.event-list > li a > .social > ul {
+    margin: 0px;
+}
+.event-list > li a > .info > ul > li,
+.event-list > li a > .social > ul > li {
+    display: table-cell;
+    cursor: pointer;
+    color: rgb(30, 30, 30);
+    font-weight: 300;
+    padding: 3px 0px;
+}
+.event-list > li a > .info > ul > li > a {
+    display: block;
+    width: 100%;
+    color: rgb(30, 30, 30);
+    text-decoration: none;
+} 
+.event-list > li a > .social > ul > li {    
+    padding: 0px;
+}
+.event-list > li a > .social > ul > li > a {
+    padding: 3px 0px;
+} 
+.event-list > li a > .info > ul > li:hover,
+.event-list > li a > .social > ul > li:hover {
+    color: rgb(30, 30, 30);
+    background-color: rgb(200, 200, 200);
+}
+
+@media (min-width: 768px) {
+    .event-list > li a{
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 120px;
+        padding: 0px;
+    }
+    .event-list > li a > img {
+        width: 120px;
+        height: 120px;
+        padding: 0px;
+        margin: 0px;
+        display: inline-block;
+    }
+    .event-list > li a > .info {
+        position: relative;
+        height: 120px;
+        text-align: left;
+        vertical-align: middle;
+    }	
+    .event-list > li a > .info > .title, 
+    .event-list > li a > .info > .desc {
+        padding: 0px 10px;
+    }
+    .event-list > li a > .info > ul {
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+    }
+    .event-list > li a > .social {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        display: block;
+        width: 40px;
+    }
+    .event-list > li a > .social > ul {
+        border-left: 1px solid rgb(230, 230, 230);
+    }
+    .event-list > li a > .social > ul > li {			
+        display: block;
+        padding: 0px;
+    }
+    .event-list > li a > .social > ul > li > a {
+        display: block;
+        width: 40px;
+        padding: 10px 0px 9px;
+    }
+}
+
+.title-header h4 {
+    color: #363636;
+    display: inline-block;
+    font-weight: 600;
+    line-height: 40px;
+    margin: 0;
+    padding: 10px 30px;
+    position: relative;
+}
+
+.card-content {
+	background: #ffffff;
+	border: 4px;
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+}
+
+.card-img {
+	position: relative;
+	overflow: hidden;
+	border-radius: 0;
+	z-index: 1;
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    span {
+        position: absolute;
+        top: 15%;
+        left: 12%;
+        background: #1ABC9C;
+        padding: 6px;
+        color: #fff;
+        font-size: 12px;
+        border-radius: 4px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+        transform: translate(-50%,-50%);
+        h3 {
+            font-size: 12px;
+            margin:0;
+            padding:10px 5px;
+            line-height: 0;
+        }
+    }
+}
+
+.card-desc {
+	padding: 1.25rem;
+     h3 {
+        color: #000000;
+        font-weight: 600;
+        font-size: 1.5em;
+        line-height: 1.3em;
+        margin-top: 0;
+        margin-bottom: 5px;
+        padding: 0;
+    }
+    p {
+        color: #747373;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.5;
+        margin: 0px;
+        margin-bottom: 20px;
+        padding: 0;
+        font-family: 'Raleway', sans-serif;
+    }
+}

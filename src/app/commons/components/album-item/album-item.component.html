@@ -1,0 +1,13 @@
+<div class="widget single-news">
+  <div class="image">
+    <img [src]="album?.cover" class="img-responsive" alt="{{ album?.name }}">
+    <span class="gradient"></span>
+  </div>
+  <div class="details">
+    <ul class="list-inline social-lists animate">
+      <li><a href="#" title="Play Album"><em class="fa fa-play"></em></a></li>
+    </ul>
+    <div class="category"><a [routerLink]="['/albums/detail', album?.id]" title="DisqueraAlbum{{album?.id}}">{{ album?.recordLabel }} </a></div>
+    <p><a [routerLink]="['/albums/detail', album?.id]" class="album-title" title="NombreAlbum{{album?.id}}">{{ album?.name }}</a></p>
+  </div>
+</div>

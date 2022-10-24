@@ -1,0 +1,141 @@
+.profile-head {
+    width: 100%;
+    position: relative;
+}
+
+.profile-head img {
+    margin: 0 auto;
+    border-radius: 5px;
+    max-width: 100%;
+    width: 100%;
+}
+
+.profile-head h5 {
+    width: 100%;
+    padding: 5px 5px 0px 5px;
+    text-align: justify;
+    font-weight: bold;
+    color: #555;
+    font-size: 25px;
+    text-transform: capitalize;
+    margin-bottom: 0;
+}
+
+.profile-head p {
+    width: 100%;
+    text-align: justify;
+    padding: 0px 5px 5px 5px;
+    color: #555;
+    font-size: 17px;
+    text-transform: capitalize;
+    margin: 0;
+}
+
+.profile-head a {
+    width: 100%;
+    text-align: center;
+    padding: 10px 5px;
+    color: #555;
+    font-size: 15px;
+    text-transform: capitalize;
+}
+
+.profile-head ul {
+    list-style: none;
+    padding: 0;
+}
+
+.profile-head ul li {
+    display: block;
+    color: #555;
+    padding: 5px;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.profile-head ul li:hover span {
+    color: rgb(0, 4, 51);
+}
+
+.profile-head ul li span {
+    color: #555;
+    padding-right: 10px;
+}
+
+.profile-head ul li a {
+    color: #555;
+}
+
+.profile-head h6 {
+    width: 100%;
+    text-align: center;
+    font-weight: 100;
+    color: #555;
+    font-size: 15px;
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+
+.divider-grad-mask {
+    width: 100%;
+    height: .3rem;
+    margin: 30px 0;
+    background: linear-gradient(90deg, #000000 0 50%, transparent 0 100%) 0 0 / 2rem 1rem;
+    mask: linear-gradient(-90deg, black, transparent);
+}
+
+.forum-item small {
+    color: #999;
+}
+ .forum-item .forum-sub-title {
+    color: #999;
+    margin-left: 50px;
+}
+.forum-title {
+    margin: 15px 0 15px 0;
+}
+.forum-info {
+    text-align: center;
+}
+.forum-desc {
+    color: #999;
+}
+.forum-icon {
+    float: left;
+    width: 30px;
+    margin-right: 20px;
+    text-align: center;
+}
+a.forum-item-title {
+    color: inherit;
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+}
+a.forum-item-title:hover {
+    color: inherit;
+}
+.forum-icon .fa {
+    font-size: 30px;
+    margin-top: 8px;
+    color: #9b9b9b;
+}
+.forum-item.active .fa {
+    color: #1ab394;
+}
+.forum-item.active a.forum-item-title {
+    color: #1ab394;
+}
+
+.head-collapse {
+    cursor: pointer;
+}
+
+@media all and (max-width:430px) {
+    .profile-head ul li {
+        font-size: 12px !important;
+    }
+    .bio-table>tbody>tr>td {
+        font-size: 13px;
+    }
+}

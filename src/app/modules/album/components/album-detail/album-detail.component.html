@@ -1,0 +1,65 @@
+<div class="container container-collector bg-white mt-5 p-3 p-lg-5 rounded">
+  <div class="row">
+        <div class="w-100">
+            <h4 class="mb-4" *ngIf="album" i18n><em class="bi-arrow-left pr-3" routerLink="/albums"></em> Detalle del álbum: {{ album.name }}</h4>
+        </div>
+        <div class="w-100" *ngIf="!album" i18n>No hay detalle para este álbum</div>
+
+        <div class="profile-head" *ngIf="album">
+            <div class="row">
+                <div class="col-md-3 col-sm-12 col-xs-12">
+                    <img [src]="album.cover" class="img-responsive" alt=""/>
+                </div>
+                <div class="col-md-9 col-xs-12">
+                    <div class="col-sm-12"><p>{{ album.releaseDate | date:'yyyy' }}</p></div>
+                    <div class="col-sm-12"><h5>{{ album.name }}</h5></div>
+                    <div class="col-sm-12"><p *ngFor="let musician of album.performers"><em>{{ musician.name }}</em></p></div>
+                    <div class="col-sm-12"><p>{{ album.description }}</p></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider-grad-mask"></div>
+
+        <div class="w-100 card" *ngIf="album">
+            <div class="w-100 head-collapse card-header" data-toggle="collapse" data-target="#collapseTraks" daria-expanded="true" aria-controls="collapseTraks"><h5>Ver listado de canciones</h5></div>
+            <div class="collapse" id="collapseTraks">
+                <div>
+                  <button id="btn-add-track" class="btn pull-right btn-success m-2" (click)="addTrack()" >Add New Track</button>
+                </div>
+                <div class="forum-item active card p-2 w-100">
+                    <div class="row" *ngIf="album.tracks && album.tracks.length === 0">
+                        <div class="col-12" i18n>
+                            No existen canciones para esté álbum
+                        </div>
+                    </div>
+                </div>
+                <div class="forum-item active card p-2 w-100" *ngFor="let track of album.tracks">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <div class="forum-icon">
+                                <em class="fa fa-play"></em>
+                            </div>
+                            <a href="#" class="forum-item-title">{{track.name}}</a>
+                            <div class="forum-sub-title"></div>
+                        </div>
+                        <div class="col-md-2 forum-info">
+                            <span class="views-number">
+                                {{track.duration}}
+                            </span>
+                            <div>
+                                <small i18n>Duración</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider-grad-mask"></div>
+
+        <div class="w-100 card" *ngIf="album">
+            <app-album-comments [comments]="album.comments" [idAlbum]="album.id"></app-album-comments>
+        </div>
+    </div>
+</div>

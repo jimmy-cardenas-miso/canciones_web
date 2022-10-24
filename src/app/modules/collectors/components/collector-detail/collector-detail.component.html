@@ -1,0 +1,98 @@
+<div class="container container-collector bg-white mt-5 p-3 p-lg-5 rounded min-vh-60">
+  <ng-container *ngTemplateOutlet="collector ? (collector?.name ? content : empty) : working"></ng-container>
+</div>
+
+<ng-template #working>
+  <div class="d-flex justify-content-center">
+    <div class="spinner-border" role="status">
+      <span class="sr-only" i18n>Loading...</span>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #empty>
+  <div class="d-flex justify-content-center" i18n>
+    No pudimos cargar la información del coleccionista
+  </div>
+</ng-template>
+
+<ng-template #content>
+  <a class="custom-link d-inline-block" routerLink="/collectors">
+    <h5 class="pb-3 gray-color" i18n><em class="bi-arrow-left pr-3"></em>Coleccionistas</h5>
+  </a>
+
+  <h1 class="pb-3" i18n>Detalle de colecccionista</h1>
+
+  <div class="row">
+    <div class="col-sm-12 col-md-3">
+      <img class="rounded img-fluid" [src]="'https://picsum.photos/300/300.jpg?grayscale'" alt="">
+    </div>
+    <div class="col-sm-12 col-md-9 align-self-center">
+      <h2>{{ collector.name }}</h2>
+      <h6 class="text-muted">{{ collector.email }}</h6>
+      <h6 class="text-muted">{{ collector.telephone }}</h6>
+    </div>
+  </div>
+
+  <section>
+    <h4 class="mt-5 mb-3" i18n>Comentarios</h4>
+    <div class="row">
+      <div *ngFor="let comment of collector.comments" class="col-sm-12 mb-2 border-bottom">
+        <div class="d-flex justify-content-between align-content-center">
+          <p>{{ comment.description }}</p>
+          <div>
+            <em *ngFor="let i of [].constructor(5 - comment.rating)" class="bi-star mr-1"></em>
+            <em *ngFor="let i of [].constructor(comment.rating)" class="bi-star-fill mr-1"></em>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 mb-2">
+        <button id="add-new-album" type="submit" class="btn pull-right btn-success mb-2" (click)="addAlbum()" i18n>Agregar Nuevo Album</button>
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <section>
+    <div class="mt-5 mb-3 d-flex justify-content-between">
+      <h4 i18n>Álbumes</h4>
+      <button routerLink="add-album" class="btn btn-primary custom-btn-search" type="submit" i18n><em
+        class="bi-plus-circle-fill mr-3"></em>Agregar
+      </button>
+    </div>
+    <div class="row collector-albums" *ngIf="albums">
+      <div *ngFor="let album of collector.collectorAlbums" class="col col-sm-12 col-md-6 col-lg-3 card-item-container">
+        <app-album-item [routerLink]="['/album', album.id]" [album]="searchAlbumDetail(album.id)"></app-album-item>
+        <em (click)="removeAlbumToFavorites(album.id)" class="bi-trash-fill trash-button"></em>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="mt-5 mb-3 d-flex justify-content-between">
+      <h4 i18n>Artistas favoritos</h4>
+      <button routerLink="add" class="btn btn-primary custom-btn-search" type="submit" i18n><em
+        class="bi-plus-circle-fill mr-3"></em>Agregar
+      </button>
+    </div>
+    <div class="row favourite-artists">
+      <div *ngFor="let performer of collector.favoritePerformers"
+           class="col-sm-12 col-md-4 col-lg-3 mb-2 card-item-container">
+        <div class="card" [routerLink]="['/artists', performer.id]">
+          <img [src]="performer.image" class="card-img-top" alt="performer-image">
+          <div class="card-body">
+            <h5 class="card-title">{{ performer.name }}</h5>
+            <p class="card-text">{{ performer.description }}</p>
+            <p class="card-text"><small
+              class="text-muted">{{ (performer.birthDate || performer.creationDate) | date }}</small></p>
+          </div>
+        </div>
+        <em (click)="removeArtistToFavorites(performer.id)" class="bi-trash-fill trash-button"></em>
+      </div>
+    </div>
+  </section>
+</ng-template>
