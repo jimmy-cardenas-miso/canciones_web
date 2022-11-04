@@ -28,11 +28,4 @@ export class ArtistListComponent implements OnInit {
       .fetchBands()
       .subscribe((bands: Artist[]) => (this.bands = bands));
   }
-
-  private getPrice(): void {
-    
-  }
-  private getStarts(): void {
-    
-  }
 }
