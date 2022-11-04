@@ -10,6 +10,8 @@ import { ArtistService } from '../service/artist.service';
 export class ArtistListComponent implements OnInit {
   public musicians: Artist[];
   public bands: Artist[];
+  public starts: Artist[];
+  public prices: Artist[];
   constructor(private artistService: ArtistService) {}
 
   ngOnInit(): void {
@@ -27,5 +29,9 @@ export class ArtistListComponent implements OnInit {
     this.artistService
       .fetchBands()
       .subscribe((bands: Artist[]) => (this.bands = bands));
+  }
+
+  private getPrice(): void {
+    
   }
 }
