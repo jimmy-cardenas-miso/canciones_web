@@ -13,6 +13,7 @@ export class ArtistService {
 
   public fetchBands(): Observable<Artist[]> {
     const url = urlBuilder.services(ENV.api.services.bands.base);
+    const l = Math.floor(Math.random() * 20);
     return this.http.get<Artist[]>(url);
   }
 

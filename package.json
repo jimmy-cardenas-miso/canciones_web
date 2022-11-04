@@ -74,10 +74,5 @@
     "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.3.0",
     "typescript": "~3.9.5"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint && npm run prettier && npm run lint:html"
-    }
   }
 }

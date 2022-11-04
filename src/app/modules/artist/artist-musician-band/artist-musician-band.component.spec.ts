@@ -11,19 +11,19 @@ describe('ArtistMusicianBandComponent', () => {
   let component: ArtistMusicianBandComponent;
   let fixture: ComponentFixture<ArtistMusicianBandComponent>;
 
-  const artistServiceSpy = jasmine.createSpyObj('ArtistService', [
+  let artistServiceSpy = jasmine.createSpyObj('ArtistService', [
     'fetchArtists',
     'addMusicians'
   ]);
 
-  const toastrServiceSpy = jasmine.createSpyObj('ToastrService', [
+  let toastrServiceSpy = jasmine.createSpyObj('ToastrService', [
     'success',
     'error'
   ]);
 
-  const fetchArtists = artistServiceSpy.fetchArtists as jasmine.Spy;
+  let fetchArtists = artistServiceSpy.fetchArtists as jasmine.Spy;
   const addMusicians = artistServiceSpy.addMusicians as jasmine.Spy;
-  const toastrSuccess = toastrServiceSpy.success as jasmine.Spy;
+  let toastrSuccess = toastrServiceSpy.success as jasmine.Spy;
   const toastrError = toastrServiceSpy.error as jasmine.Spy;
 
   beforeEach(async(() => {
