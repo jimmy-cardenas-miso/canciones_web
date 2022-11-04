@@ -50,7 +50,7 @@ export class CollectorService {
     });
 
     return this.http.post<void>(url, {
-      price: Math.floor(Math.random() * 45000) + 10000,
+      price:  10000,
       status: 'Active'
     });
   }
