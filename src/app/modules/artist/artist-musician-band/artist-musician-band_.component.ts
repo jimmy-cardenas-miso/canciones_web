@@ -15,8 +15,7 @@ import { Artist } from '@modules/artist/entities/artist.interface';
 export class ArtistMusicianBandComponent implements OnInit, OnDestroy {
   public artists: Artist[];
   private subscriptions: Subscription[] = [];
-  public starts: Artist[];
-  public descriptions: Artist[];
+
   @Input() musicians: any;
   @Input() bandId: number;
 
@@ -69,5 +68,11 @@ export class ArtistMusicianBandComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     removeSubscriptions(this.subscriptions);
+  }
+  private getMusic(): void {
+    
+  }
+  private getBand(): void {
+    
   }
 }
