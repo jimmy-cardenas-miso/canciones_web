@@ -8,6 +8,4 @@ import { Album } from '@modules/album/album.interface';
 })
 export class AlbumItemComponent {
   @Input() album: Album;
-
-  constructor() {}
 }
